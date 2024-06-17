@@ -61,7 +61,7 @@ export default function Main() {
                     <div className={"bg-[#F7F9F2] col-span-3 rounded-t-xl h-10"}>
                         <Heading/>
                     </div>
-                    <div className={"bg-[#7776B3] col-span-2 h-96"}>
+                    <div className={"bg-[#7776B3] col-span-2 h-96 overflow-y-auto scrollbar-hide"}>
                         <TodoList
                             items={items}
                             handleToggleItem={handleToggleItem}

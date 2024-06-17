@@ -1,8 +1,9 @@
 import {Button, Input} from "@nextui-org/react";
-import {useState} from "react";
+import {useRef, useState} from "react";
 
 export default function AddItemForm({onAddTodo}) {
     const [todoText, setTodoText] = useState("");
+    const inputRef = useRef(null);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -12,6 +13,8 @@ export default function AddItemForm({onAddTodo}) {
         }
         onAddTodo(todoText)
         setTodoText("")
+        inputRef.current.focus(); // Step 3
+
     }
 
     return (
@@ -19,6 +22,7 @@ export default function AddItemForm({onAddTodo}) {
             <form onSubmit={handleSubmit} className={"flex flex-col justify-center items-center pt-10 pb-5 gap-5"}>
                 <div className={"w-[70%]"}>
                     <Input
+                        ref={inputRef}
                         type={"text"}
                         autoFocus
                         value={todoText}
