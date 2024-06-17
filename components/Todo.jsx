@@ -6,8 +6,7 @@ export default function Todo({item}) {
             <Card className={"rounded-sm"}>
                 <CardBody className={"backdrop-blur-lg"}>
                     <Checkbox
-                        defaultSelected={item.completed}
-
+                        isSelected={item.completed}
                         lineThrough={true}
                     >
                         <p className={"font-semibold"}>{item.name}</p>

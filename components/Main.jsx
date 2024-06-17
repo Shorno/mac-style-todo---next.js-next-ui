@@ -27,6 +27,18 @@ export default function Main() {
         console.log(newItems)
         setItems(newItems)
     }
+    const handleMarkAllAsIncomplete = ()=>{
+        const newItems = items.map((item)=>{
+            return {...item, completed: false}
+        })
+        setItems(newItems)
+    }
+    const handleResetToInitial = ()=>{
+        setItems(initialItems)
+    }
+    const deleteAllItems = ()=>{
+        setItems([])
+    }
 
 
     return (
@@ -43,6 +55,9 @@ export default function Main() {
                         <Sidebar
                             handleAddTodo={handleAddTodo}
                             handleMarkAllAsComplete={handleMarkAllAsComplete}
+                            handleMarkAllAsIncomplete={handleMarkAllAsIncomplete}
+                            handleResetToInitial={handleResetToInitial}
+                            deleteAllItems={deleteAllItems}
                         />
                     </div>
                 </div>
