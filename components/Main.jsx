@@ -27,17 +27,30 @@ export default function Main() {
         console.log(newItems)
         setItems(newItems)
     }
-    const handleMarkAllAsIncomplete = ()=>{
-        const newItems = items.map((item)=>{
+    const handleMarkAllAsIncomplete = () => {
+        const newItems = items.map((item) => {
             return {...item, completed: false}
         })
         setItems(newItems)
     }
-    const handleResetToInitial = ()=>{
+    const handleResetToInitial = () => {
         setItems(initialItems)
     }
-    const deleteAllItems = ()=>{
+    const deleteAllItems = () => {
         setItems([])
+    }
+    const handleToggleItem = (id) => {
+        const newItems = items.map((item) => {
+            if (item.id === id) {
+                return {...item, completed: !item.completed}
+            }
+            return item;
+        })
+        setItems(newItems)
+    }
+    const handleDeleteItem = (id) => {
+        const newItems = items.filter((item) => item.id !== id)
+        setItems(newItems)
     }
 
 
@@ -49,7 +62,12 @@ export default function Main() {
                         <Heading/>
                     </div>
                     <div className={"bg-[#7776B3] col-span-2 h-96"}>
-                        <TodoList items={items}/>
+                        <TodoList
+                            items={items}
+                            handleToggleItem={handleToggleItem}
+                            handleDeleteItem={handleDeleteItem}
+
+                        />
                     </div>
                     <div className={"bg-[#E2BBE9] h-96"}>
                         <Sidebar

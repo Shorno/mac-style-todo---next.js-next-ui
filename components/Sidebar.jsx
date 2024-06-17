@@ -1,7 +1,14 @@
 import AddItemForm from "@/components/AddItemForm";
 import ButtonGroup from "@/components/ButtonGroup";
 
-export default function Sidebar({handleAddTodo,handleMarkAllAsComplete,handleMarkAllAsIncomplete, handleResetToInitial, deleteAllItems}) {
+export default function Sidebar({
+                                    handleAddTodo,
+                                    handleMarkAllAsComplete,
+                                    handleMarkAllAsIncomplete,
+                                    handleResetToInitial,
+                                    deleteAllItems,
+                                    handleToggleItem
+                                }) {
     return (
         <>
 

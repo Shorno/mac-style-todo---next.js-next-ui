@@ -1,6 +1,6 @@
 import Todo from "@/components/Todo";
 
-export default function TodoList({items}) {
+export default function TodoList({items, handleToggleItem, handleDeleteItem}) {
     return (
         <>
             {
@@ -8,6 +8,8 @@ export default function TodoList({items}) {
                     return <Todo
                         key={item.id}
                         item={item}
+                        onToggleItem={handleToggleItem}
+                        onDeleteItem={handleDeleteItem}
 
                     />
                 })
