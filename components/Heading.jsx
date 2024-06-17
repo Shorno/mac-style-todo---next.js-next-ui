@@ -1,0 +1,16 @@
+export default function Heading(){
+    return(
+        <>
+            <div className={"flex items-center p-2"}>
+                <div className={"flex gap-2 absolute"}>
+                    <div className={"size-4 rounded-full bg-[#FF8F8F]"}></div>
+                    <div className={"size-4 rounded-full bg-[#FFBB64]"}></div>
+                    <div className={"size-4 rounded-full bg-[#9ADE7B]"}></div>
+                </div>
+                <div className={"w-full text-center"}>
+                    <h1>My Custom Todo App</h1>
+                </div>
+            </div>
+        </>
+    )
+}
