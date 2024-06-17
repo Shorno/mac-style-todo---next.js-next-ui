@@ -29,7 +29,7 @@ export default function AddItemForm({onAddTodo}) {
                         }}
                     />
                 </div>
-                <Button type={"submit"} size={"sm"} color={"primary"}>Add to list</Button>
+                <Button type={"submit"} size={"md"} color={"primary"}>Add to list</Button>
             </form>
         </>
     )

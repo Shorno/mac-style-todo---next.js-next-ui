@@ -20,6 +20,14 @@ export default function Main() {
         setItems(newItems)
     }
 
+    const handleMarkAllAsComplete = () => {
+        const newItems = items.map((item) => {
+            return {...item, completed: true}
+        })
+        console.log(newItems)
+        setItems(newItems)
+    }
+
 
     return (
         <>
@@ -32,7 +40,10 @@ export default function Main() {
                         <TodoList items={items}/>
                     </div>
                     <div className={"bg-[#E2BBE9] h-96"}>
-                        <Sidebar handleAddTodo={handleAddTodo} />
+                        <Sidebar
+                            handleAddTodo={handleAddTodo}
+                            handleMarkAllAsComplete={handleMarkAllAsComplete}
+                        />
                     </div>
                 </div>
             </Card>
