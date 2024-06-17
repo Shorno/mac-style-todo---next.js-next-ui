@@ -1,9 +1,9 @@
 import AddItemForm from "@/components/AddItemForm";
 
-export default function Sidebar(){
+export default function Sidebar({handleAddTodo}){
     return(
         <>
-            <AddItemForm/>
+            <AddItemForm onAddTodo={handleAddTodo} />
         </>
     )
 }

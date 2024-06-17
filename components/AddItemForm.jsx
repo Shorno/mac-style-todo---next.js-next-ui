@@ -1,14 +1,36 @@
 import {Button, Input} from "@nextui-org/react";
+import {useState} from "react";
 
-export default function AddItemForm(){
+export default function AddItemForm({onAddTodo}) {
+    const [todoText, setTodoText] = useState("");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!todoText) {
+            alert("Cannot add empty todo!");
+            return;
+        }
+        onAddTodo(todoText)
+        setTodoText("")
+    }
+
     return (
         <>
-            <div className={"flex flex-col justify-center items-center pt-10 pb-5 gap-5"}>
+            <form onSubmit={handleSubmit} className={"flex flex-col justify-center items-center pt-10 pb-5 gap-5"}>
                 <div className={"w-[70%]"}>
-                    <Input size={"md"} color={"default"} placeholder={"Enter items to add..."}/>
+                    <Input
+                        type={"text"}
+                        autoFocus
+                        value={todoText}
+                        size={"md"} color={"default"}
+                        placeholder={"Enter items to add..."}
+                        onChange={(e) => {
+                            setTodoText(e.target.value)
+                        }}
+                    />
                 </div>
-                <Button size={"sm"} color={"primary"}>Add to list</Button>
-            </div>
+                <Button type={"submit"} size={"sm"} color={"primary"}>Add to list</Button>
+            </form>
         </>
     )
 }
