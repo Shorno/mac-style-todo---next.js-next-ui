@@ -7,7 +7,6 @@ export default function Sidebar({
                                     handleMarkAllAsIncomplete,
                                     handleResetToInitial,
                                     deleteAllItems,
-                                    handleToggleItem
                                 }) {
     return (
         <>

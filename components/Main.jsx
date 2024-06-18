@@ -59,7 +59,10 @@ export default function Main() {
             <Card className={"w-1/2 mx-auto"}>
                 <div className={"grid grid-cols-3"}>
                     <div className={"bg-[#F7F9F2] col-span-3 rounded-t-xl h-10"}>
-                        <Heading/>
+                        <Heading
+                            totalTodos={items.length}
+                            completedTodos={items.filter(item => item.completed).length}
+                        />
                     </div>
                     <div className={"bg-[#7776B3] col-span-2 h-96 overflow-y-auto scrollbar-hide"}>
                         <TodoList
